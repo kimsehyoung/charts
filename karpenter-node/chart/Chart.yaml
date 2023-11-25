@@ -1,0 +1,4 @@
+apiVersion: v2
+name: karpenter-node
+description: A Helm chart for Karpenter beta's nodepool and nodeclass
+version: 0.32.2

@@ -1,0 +1,27 @@
+
+{{- range .Values.nodepools }}
+---
+apiVersion: karpenter.sh/v1beta1
+kind: NodePool
+metadata:
+  name: {{ .name }}
+spec:
+  template:
+    metadata:
+      labels:
+        type: {{ .name }}
+    spec:
+      nodeClassRef:
+        name: {{ $.Values.nodeclass.name }}
+      requirements:
+      {{- toYaml .requirements | nindent 8 }}
+  limits:
+  {{- if .limits }}
+    {{- toYaml .limits | nindent 4 }}
+  {{- else }}
+    cpu: 12
+    memory: 32Gi
+  {{- end }}
+  disruption:
+    {{- toYaml $.Values.disruption | nindent 4 }}
+{{- end }}

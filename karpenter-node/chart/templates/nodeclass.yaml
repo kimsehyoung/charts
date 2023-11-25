@@ -1,0 +1,15 @@
+apiVersion: karpenter.k8s.aws/v1beta1
+kind: EC2NodeClass
+metadata:
+  name: {{ .Values.nodeclass.name }}
+spec:
+  amiFamily: {{ .Values.nodeclass.amiFamily }}
+  role: {{ printf "KarpenterNodeRole-%s" .Values.nodeclass.clusterName }}
+  subnetSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: {{ .Values.nodeclass.clusterName }}
+  securityGroupSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: {{ .Values.nodeclass.clusterName }}
+  tags:
+    karpenter.sh/discovery: {{ .Values.nodeclass.clusterName }}
