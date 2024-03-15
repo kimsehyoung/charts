@@ -1,0 +1,4 @@
+apiVersion: v2
+name: dongle-test
+description: Test Helm chart
+version: 0.1.0

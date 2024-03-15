@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "dongle-test.fullname" . }}-test-configmap
+  namespace: {{ .Release.Namespace }}
+data:
+  nginx.tmpl: {{ .Values.nginxTemplate | quote }}
