@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  dongle-test:
+  - apiVersion: v2
+    created: "2024-03-15T10:56:28.43718+09:00"
+    description: Test Helm chart
+    digest: 4479da17496e42745c35df18cb499a5102527d824c26095592f201ad338cbf3a
+    name: dongle-test
+    urls:
+    - dongle-test-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-03-15T10:56:28.435521+09:00"
