@@ -1,2 +1,0 @@
-nginxTemplate: |
-  {{ .Files.Get "nginx.tmpl" | indent 2 }}
