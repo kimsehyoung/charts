@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   test: "test"
-  nginx.tmpl: >
+  nginx.tmpl: |
     {{ $all := . }}
     {{ $servers := .Servers }}
     {{ $cfg := .Cfg }}
@@ -14,6 +14,7 @@ data:
     {{ $backends := .Backends }}
     {{ $proxyHeaders := .ProxySetHeaders }}
     {{ $addHeaders := .AddHeaders }}
+
 
     # setup custom paths that do not require root access
     pid {{ .PID }};
