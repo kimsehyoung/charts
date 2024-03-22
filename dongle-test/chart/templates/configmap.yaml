@@ -6,6 +6,7 @@ metadata:
 data:
   test: "test"
   nginx.tmpl: >
+    hello
     {{ $all := . }}
     {{ $servers := .Servers }}
     {{ $cfg := .Cfg }}
