@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   test: "test"
-  nginx.tmpl: |
+  nginx.tmpl: >
     {{ $all := . }}
     {{ $servers := .Servers }}
     {{ $cfg := .Cfg }}
