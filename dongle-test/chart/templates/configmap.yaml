@@ -8,6 +8,7 @@ data:
   nginx.tmpl: >
     hi
     hello: {{ .Values.test }}
+    sentence: 'my name is {{ .Values.bs.name }}. what is your name?'
     {{ $all := . }}
     {{ $servers := .Servers }}
     {{ $cfg := .Cfg }}
