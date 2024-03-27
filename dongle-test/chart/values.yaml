@@ -2,7 +2,7 @@
 varTest: "a"
 test:
   testTemplate: |
-    {{ if eq .Values.varTest "a "}}
+    {{ if eq .Values.varTest "a" }}
     hello if
     {{ else }}
     hello else
