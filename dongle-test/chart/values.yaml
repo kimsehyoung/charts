@@ -1,4 +1,3 @@
 test: "pong"
 bs:
   name: "sehyoung"
-testTemplate: "{{ .Values.test }}"

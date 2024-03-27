@@ -5,4 +5,5 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   test: "test"
-  nginx.tmpl: {{ .Values.testTemplate | quote }}
+  nginx.tmpl: |-
+{{ .Files.Get "nginx.tmpl" | indent 4 }}
