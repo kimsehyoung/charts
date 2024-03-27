@@ -1,1 +1,13 @@
-hello dongle
+{{ $all := . }}
+{{ $servers := .Servers }}
+{{ $cfg := .Cfg }}
+{{ $IsIPV6Enabled := .IsIPV6Enabled }}
+{{ $healthzURI := .HealthzURI }}
+{{ $backends := .Backends }}
+{{ $proxyHeaders := .ProxySetHeaders }}
+{{ $addHeaders := .AddHeaders }}
+
+# Configuration checksum: {{ $all.Cfg.Checksum }}
+
+# setup custom paths that do not require root access
+pid {{ .PID }};
