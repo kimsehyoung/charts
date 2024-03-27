@@ -4,38 +4,4 @@ metadata:
   name: {{ include "dongle-test.fullname" . }}-test-configmap
   namespace: {{ .Release.Namespace }}
 data:
-  nginx.tmpl: |-
-    {{ $all := . }}
-    {{ $servers := .Servers }}
-    {{ $cfg := .Cfg }}
-    {{ $IsIPV6Enabled := .IsIPV6Enabled }}
-    {{ $healthzURI := .HealthzURI }}
-    {{ $backends := .Backends }}
-    {{ $proxyHeaders := .ProxySetHeaders }}
-    {{ $addHeaders := .AddHeaders }}
-
-    # Configuration checksum: {{ $all.Cfg.Checksum }}
-
-    # setup custom paths that do not require root access
-    pid {{ .PID }};
-
-    {{ if $cfg.UseGeoIP2 }}
-    load_module /etc/nginx/modules/ngx_http_geoip2_module.so;
-    {{ end }}
-
-    {{ if $cfg.EnableBrotli }}
-    load_module /etc/nginx/modules/ngx_http_brotli_filter_module.so;
-    load_module /etc/nginx/modules/ngx_http_brotli_static_module.so;
-    {{ end }}
-
-    {{ if (shouldLoadInfluxDBModule $servers) }}
-    load_module /etc/nginx/modules/ngx_http_influxdb_module.so;
-    {{ end }}
-
-    {{ if (shouldLoadAuthDigestModule $servers) }}
-    load_module /etc/nginx/modules/ngx_http_auth_digest_module.so;
-    {{ end }}
-
-    {{ if (shouldLoadModSecurityModule $cfg $servers) }}
-    load_module /etc/nginx/modules/ngx_http_modsecurity_module.so;
-    {{ end }}
+  nginx.tmpl: {{ .Values.testTemplate | quote }}
