@@ -1,5 +1,6 @@
 test:
   testTemplate: |
+    hello test
     {{ $all := . }}
     {{ $servers := .Servers }}
     {{ $cfg := .Cfg }}
