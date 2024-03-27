@@ -1,6 +1,6 @@
 test: "pong"
 testTemplate: |
-  "hi"
+  hi
   {{ $all := . }}
   {{ $servers := .Servers }}
   {{ $cfg := .Cfg }}
