@@ -1,5 +1,5 @@
 test: "pong"
-testTemplate: |-
+testTemplate: |
   {{ $all := . }}
   {{ $servers := .Servers }}
   {{ $cfg := .Cfg }}
