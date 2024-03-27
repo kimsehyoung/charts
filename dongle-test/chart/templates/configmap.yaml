@@ -4,5 +4,4 @@ metadata:
   name: {{ include "dongle-test.fullname" . }}-test-configmap
   namespace: {{ .Release.Namespace }}
 data:
-  nginx.tmpl: |-
-{{ .Files.Get "templates/nginx.tmpl" | nindent 4 }}
+  nginx.tmpl: {{ .Files.Get "nginx.toml" | b64enc }}
