@@ -4,4 +4,4 @@ metadata:
   name: {{ include "dongle-test.fullname" . }}-test-configmap
   namespace: {{ .Release.Namespace }}
 data:
-  nginx.tmpl: "why?"
+  nginx.tmpl: "hey"
