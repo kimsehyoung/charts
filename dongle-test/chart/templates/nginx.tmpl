@@ -21,7 +21,7 @@ load_module /etc/nginx/modules/ngx_http_brotli_filter_module.so;
 load_module /etc/nginx/modules/ngx_http_brotli_static_module.so;
 {{ end }}
 
-{{ if (shouldLoadInfluxDBModule $servers) }}
+{{` {{ if (shouldLoadInfluxDBModule $servers) }} `}}
 load_module /etc/nginx/modules/ngx_http_influxdb_module.so;
 {{ end }}
 
