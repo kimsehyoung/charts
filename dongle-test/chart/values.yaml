@@ -1,6 +1,12 @@
+
+varTest: "a"
 test:
   testTemplate: |
-    hello test
+    {{ if eq .Values.varTest "a "}}
+    hello if
+    {{ else }}
+    hello else
+    {{ end }}
     {{ $all := . }}
     {{ $servers := .Servers }}
     {{ $cfg := .Cfg }}
