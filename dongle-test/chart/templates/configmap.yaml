@@ -5,4 +5,4 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   test: "test"
-  nginx.tmpl: {{ file.Read "./templates/nginx.tmpl" | toJSON }}
+  nginx.tmpl: {{ .Files.Get ./templates/nginx.tmpl" | indent 4 }}
