@@ -6,7 +6,7 @@ metadata:
 data:
   test: "sssss"
   {{- if eq .Values.env "stag" -}}
-  nginx.tmpl: "aaaaa"
+  whatthe: "aaaa"
   {{- else -}}
-  nginx.tmpl: "bbbbb"
+  whatthe: "bbbbb"
   {{- end -}}
