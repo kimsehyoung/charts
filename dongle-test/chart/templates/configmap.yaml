@@ -4,9 +4,9 @@ metadata:
   name: {{ include "dongle-test.fullname" . }}-test-configmap
   namespace: {{ .Release.Namespace }}
 data:
-  test: "sssss"
+  test: "gggg"
 {{- if eq .Values.env "stag" }}
-  whatthe: "aaaa"
+  whatthe: {{ .Values.stagNginxTemplate | quote}}
 {{- else }}
-  whatthe: "bbbbb"
+  whatthe: {{ .Values.prodNginxTemplate | quote}}
 {{- end }}
