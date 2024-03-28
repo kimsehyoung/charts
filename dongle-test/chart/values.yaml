@@ -1,1 +1,1 @@
-filePath: "custom_nginx.tmpl"
+env: "stag"
