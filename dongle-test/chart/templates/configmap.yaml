@@ -5,4 +5,4 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   test: "why"
-  nginx.tmpl: {{ .Values.stagNginxTemplate | quote }}
+  nginx.tmpl: {{ .Values.astagNginxTemplate }}
