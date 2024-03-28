@@ -4,7 +4,7 @@ metadata:
   name: {{ include "dongle-test.fullname" . }}-test-configmap
   namespace: {{ .Release.Namespace }}
 data:
-  {{- if .Values.env "stag" -}}
+  {{- if eq .Values.env "stag" -}}
   nginx.tmpl: {{ .Values.stagNginxTemplate | quote }}
   {{- else -}}
   nginx.tmpl: {{ .Values.prodNginxTemplate | quote }}
