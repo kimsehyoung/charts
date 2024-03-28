@@ -1,1 +1,4 @@
 env: "stag"
+
+stagNginxTemplate: "hi"
+prodNginxTemplate: "hello"
