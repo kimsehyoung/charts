@@ -5,8 +5,4 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   test: "why"
-  {{- if eq .Values.env "stag" -}}
   nginx.tmpl: {{ .Values.stagNginxTemplate | quote }}
-  {{- else -}}
-  nginx.tmpl: {{ .Values.prodNginxTemplate | quote }}
-  {{- end -}}
