@@ -4,5 +4,5 @@ metadata:
   name: {{ include "dongle-test.fullname" . }}-test-configmap
   namespace: {{ .Release.Namespace }}
 data:
-  test: "why"
-  nginx.tmpl: {{ .Values.astagNginxTemplate }}
+  test: "aaa"
+  nginx.tmpl: {{ .Values.aprodNginxTemplate }}

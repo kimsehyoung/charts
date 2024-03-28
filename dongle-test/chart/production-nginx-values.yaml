@@ -1,3 +1,4 @@
+aprodNginxTemplate: "hello"
 prodNginxTemplate: |
   production
   {{ $all := . }}
