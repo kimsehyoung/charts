@@ -5,8 +5,4 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   test: "sssss"
-  {{- if eq .Values.env "stag" -}}
   whatthe: "aaaa"
-  {{- else -}}
-  whatthe: "bbbbb"
-  {{- end -}}
