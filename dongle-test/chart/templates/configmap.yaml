@@ -5,4 +5,8 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   test: "sssss"
-  nginx.tmpl: {{ .Values.aprodNginxTemplate }}
+  {{- if eq .Values.env "stag" -}}
+  nginx.tmpl: "aaaaa"
+  {{- else -}}
+  nginx.tmpl: "bbbbb"
+  {{- end -}}
